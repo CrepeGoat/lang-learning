@@ -1,0 +1,5 @@
+name: agda-learning
+include:
+  src
+depend:
+  standard-library
