@@ -1,2 +1,5 @@
-# Specify filepatterns you want git to ignore.
+# System files
 .DS_Store
+
+# IDE files
+*.sublime-workspace
