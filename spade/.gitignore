@@ -1,0 +1,9 @@
+.ruff_cache
+
+*/lib/
+*/include/
+*/bin/
+*/pyvenv.cfg
+*.lock
+
+*.sublime-workspace
