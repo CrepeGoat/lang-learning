@@ -1,1 +1,4 @@
 name = "hdmi"
+
+[simulation]
+testbench_dir = "test"
