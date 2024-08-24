@@ -1,0 +1,38 @@
+--- ./runt.toml
++++ ./runt.toml
+@@ -5,7 +5,7 @@
+ name = "check"
+ paths = ["tests/check/*.fil", "primitives/*.fil"]
+ cmd = """
+-./target/debug/filament {} --check
++./result/bin/filament {} --check
+ """
+ expect_dir = "tests/check/"
+ 
+@@ -13,7 +13,7 @@
+ name = "errors"
+ paths = ["tests/errors/**/*.fil"]
+ cmd = """
+-./target/debug/filament {}
++./result/bin/filament {}
+ """
+ 
+ [[tests]]
+@@ -63,7 +63,7 @@
+ paths = ["tests/gen/*/*.toml"]
+ cmd = """
+ dir=$(dirname {}) && \
+-./target/debug/filament $dir.fil --bindings {} --dump-interface
++./result/bin/filament $dir.fil --bindings {} --dump-interface
+ """
+ 
+ # ============ Larger designs in Filament =====================
+@@ -131,7 +131,7 @@
+ name = "examples"
+ paths = ["examples/*.fil"]
+ cmd = """
+-./target/debug/filament {} --check
++./result/bin/filament {} --check
+ """
+ 
+ [[tests]]
