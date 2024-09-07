@@ -8,8 +8,8 @@ let
     hash = "sha256-pHG0H4e6DieZSV+qiDHcmq1i4+CdqDJOfIAQnGmxba8=";
   };
   runt = pkgs.callPackage ./runt/package.nix { };
+  calyx = pkgs.callPackage ./calyx/package.nix { inherit runt; };
 in
 pkgs.callPackage ./package.nix {
-  src = src;
-  runt = runt;
+  inherit src runt calyx;
 }

@@ -8,6 +8,7 @@
   python3,
   python3Packages,
   runt,
+  calyx,
   jq,
   z3,
   cvc5,
@@ -36,6 +37,7 @@ rustPlatform.buildRustPackage {
     python3
     python3Packages.numpy
     runt
+    calyx
     jq
     smt
   ];
