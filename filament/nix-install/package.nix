@@ -9,6 +9,7 @@
   python3Packages,
   runt,
   calyx,
+  fud,
   jq,
   z3,
   cvc5,
@@ -29,7 +30,7 @@ rustPlatform.buildRustPackage {
   pname = "filament";
   version = srcTomlMeta.version;
 
-  src = src;
+  inherit src;
   cargoPatches = [ ./add-Cargo.lock.patch ];
   cargoHash = "sha256-VMsjEP4/ivVe2UrXuZvMuiEhIr8RruHOX/e2kL0CJgU=";
 
@@ -38,6 +39,7 @@ rustPlatform.buildRustPackage {
     python3Packages.numpy
     runt
     calyx
+    fud
     jq
     smt
   ];
@@ -52,8 +54,7 @@ rustPlatform.buildRustPackage {
   '';
 
   meta = {
-    description = srcTomlMeta.description;
-    homepage = srcTomlMeta.homepage;
+    inherit (srcTomlMeta) description homepage;
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
   };

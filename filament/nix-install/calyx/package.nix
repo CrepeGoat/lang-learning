@@ -1,21 +1,17 @@
 {
+  src,
   # nix stdlib
   lib,
   rustPlatform,
-  fetchFromGitHub,
   # dependencies
   runt,
+  fud,
 }:
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage {
   pname = "calyx";
   version = "0.7.1";
 
-  src = fetchFromGitHub {
-    owner = "calyxir";
-    repo = pname;
-    rev = "v${version}";
-    hash = "sha256-JZl+8JT/gngZ2Vunz7w3vP/iv3qxSw4jh8/C4SSHNd8=";
-  };
+  inherit src;
   cargoPatches = [
     ./Cargo.lock.patch
     ./cider-dap_Cargo.toml.patch
@@ -24,6 +20,7 @@ rustPlatform.buildRustPackage rec {
 
   nativeBuildInputs = [
     runt
+    fud
   ];
 
   patches = [ ./runt.toml.patch ];
