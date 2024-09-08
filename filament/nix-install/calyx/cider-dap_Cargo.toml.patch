@@ -1,0 +1,11 @@
+--- ./cider-dap/Cargo.toml
++++ ./cider-dap/Cargo.toml
+@@ -6,7 +6,7 @@
+ # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+ 
+ [dependencies]
+-dap = { git = "https://github.com/sztomi/dap-rs", tag = "v0.3.1-alpha1" }
++dap = "0.3.1-alpha1"
+ thiserror = "1.*"
+ serde_json = "1.0"
+ serde.workspace= true

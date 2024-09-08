@@ -16,8 +16,11 @@ rustPlatform.buildRustPackage rec {
     rev = "v${version}";
     hash = "sha256-JZl+8JT/gngZ2Vunz7w3vP/iv3qxSw4jh8/C4SSHNd8=";
   };
-  cargoPatches = [ ./update-Cargo.lock.patch ];
-  cargoHash = "sha256-LcdiloeqBbNn0Uy+8K2igc95bBWQd0Rh1a6+ogG8ZXU=";
+  cargoPatches = [
+    ./Cargo.lock.patch
+    ./cider-dap_Cargo.toml.patch
+  ];
+  cargoHash = "sha256-mMGkpUeWKqc2Srbtd1+3SYQjVCVRUU3VITfQohQDnfM=";
 
   nativeBuildInputs = [
     runt
