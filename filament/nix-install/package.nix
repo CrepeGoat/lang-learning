@@ -9,7 +9,6 @@
   python3Packages,
   runt,
   calyx,
-  fud,
   jq,
   z3,
   cvc5,
@@ -39,7 +38,6 @@ rustPlatform.buildRustPackage {
     python3Packages.numpy
     runt
     calyx
-    fud
     jq
     smt
   ];
